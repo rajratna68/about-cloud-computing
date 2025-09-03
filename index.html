@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Learn everything about cloud computing – from basics to advanced, services, benefits, and solutions."/>
+  <meta name="keywords" content="Cloud Computing, SaaS, IaaS, PaaS, Cloud Services, Web Hosting, AWS, Azure, GCP"/>
+  <meta name="author" content="Your Name or Company"/>
+  <title>Cloud Computing | Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?cloud,technology') no-repeat center center/cover;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    .section-padding {
+      padding: 80px 0;
+    }
+
+    .card-icon {
+      font-size: 40px;
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+      color: white;
+    }
+
+    .faq .accordion-button {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">CloudCompute</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Empowering the Future with Cloud Computing</h1>
+      <p class="lead mt-3">Scale smarter. Work faster. Store safer.</p>
+      <a href="#about" class="btn btn-primary btn-lg mt-4">Learn More</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>About Cloud Computing</h2>
+        <p class="text-muted">A technology that's transforming industries worldwide.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://source.unsplash.com/800x600/?cloud,data" alt="Cloud" class="img-fluid rounded"/>
+        </div>
+        <div class="col-md-6">
+          <h3>What is Cloud Computing?</h3>
+          <p>Cloud computing is the on-demand availability of computer system resources—especially data storage and computing power—without direct active management by the user. It allows organizations to rent access to everything from applications to storage from a cloud service provider.</p>
+          <p>There are three main types of cloud services:</p>
+          <ul>
+            <li><strong>SaaS</strong> – Software as a Service</li>
+            <li><strong>PaaS</strong> – Platform as a Service</li>
+            <li><strong>IaaS</strong> – Infrastructure as a Service</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="bg-light section-padding" id="services">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Our Cloud Services</h2>
+        <p class="text-muted">We offer comprehensive cloud solutions for all your needs.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <div class="card-icon"><i class="fas fa-server"></i></div>
+            <h5>Infrastructure as a Service (IaaS)</h5>
+            <p>Scalable server and storage solutions delivered via the cloud. Build your own virtual datacenter.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <div class="card-icon"><i class="fas fa-code"></i></div>
+            <h5>Platform as a Service (PaaS)</h5>
+            <p>Deploy and manage applications without worrying about infrastructure complexities.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 p-4 text-center">
+            <div class="card-icon"><i class="fas fa-cloud"></i></div>
+            <h5>Software as a Service (SaaS)</h5>
+            <p>Access powerful software tools directly from your browser – no downloads, no installations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section-padding" id="benefits">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Why Choose Cloud?</h2>
+        <p class="text-muted">Discover the key advantages of cloud adoption.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Cost Efficiency</li>
+            <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> High Availability</li>
+            <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Scalability and Flexibility</li>
+            <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i> Data Security</li>
+            <li class="list-group-item"><i class="fas
