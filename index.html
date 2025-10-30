@@ -1,200 +1,38 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cricket Teams — My GitHub Site</title>
-  <meta name="description" content="Simple list of cricket teams" />
-
+  <title>Cricket Teams</title>
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#ffcc00;
-      --glass: rgba(255,255,255,0.03);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      background-color: #f2f2f2;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; background:
-      linear-gradient(180deg,#041028 0%, #071733 60%);
-      color:#e6eef6; -webkit-font-smoothing:antialiased;
-      padding:32px;
+    h1 { 
+      color: #007bff; 
     }
-
-    header{
-      max-width:1100px; margin:0 auto 24px; display:flex;
-      align-items:center; gap:16px; justify-content:space-between;
-    }
-    .logo{
-      display:flex; gap:12px; align-items:center;
-    }
-    .logo .ball{
-      width:46px; height:46px; border-radius:50%;
-      background: radial-gradient(circle at 30% 30%, #fff 6%, transparent 7%),
-                  linear-gradient(135deg,#ffb84d, #ffcc00);
-      box-shadow:0 6px 18px rgba(0,0,0,0.45);
-      display:grid; place-items:center; font-weight:700; color:#082032;
-    }
-    h1{font-size:20px; margin:0}
-    p.lead{margin:0; color:var(--muted); font-size:13px}
-
-    .controls{
-      display:flex; gap:8px; align-items:center;
-      margin-top:12px; flex-wrap:wrap;
-    }
-    .search{
-      background:var(--glass); border:1px solid rgba(255,255,255,0.03);
-      padding:10px 12px; border-radius:10px; width:300px; color:inherit;
-      outline:none;
-    }
-    .select{
-      background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04);
-      padding:10px 12px; border-radius:10px;
-    }
-
-    main{max-width:1100px; margin:18px auto 80px}
-
-    .grid{
-      display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
-      gap:16px;
-    }
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:12px; padding:14px; display:flex; gap:12px; align-items:center;
-      border:1px solid rgba(255,255,255,0.03);
-      transition: transform .15s ease, box-shadow .15s;
-    }
-    .card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(2,6,23,0.6); }
-
-    .flag{
-      width:64px; height:64px; border-radius:8px; background:linear-gradient(#fff0,#0000);
-      display:grid; place-items:center; font-weight:700; color:#082032; font-size:12px;
-      background:linear-gradient(135deg,#e6f2ff,#ffdca6);
-      flex:0 0 64px;
-    }
-    .info{flex:1}
-    .team-name{font-weight:700; margin:0 0 6px; font-size:16px}
-    .meta{color:var(--muted); font-size:13px; margin:0}
-    .tags{margin-top:8px; display:flex; gap:8px; flex-wrap:wrap}
-    .tag{font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(255,255,255,0.03); color:var(--muted)}
-
-    footer{max-width:1100px; margin:32px auto; color:var(--muted); font-size:13px; text-align:center}
-    @media (max-width:520px){
-      header{padding:0 8px}
-      .search{width:100%}
+    .team {
+      background: white;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 8px;
+      width: 250px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <div class="ball">CR</div>
-      <div>
-        <h1>Cricket Teams</h1>
-        <p class="lead">A simple list of teams you can host on GitHub Pages</p>
-      </div>
-    </div>
+  <h1>🏏 Cricket Teams</h1>
 
-    <div class="controls" aria-hidden="false">
-      <input id="search" class="search" placeholder="Search teams or countries..." />
-      <select id="filterFormat" class="select" title="Filter by format">
-        <option value="all">All formats</option>
-        <option value="international">International</option>
-        <option value="ipl">IPL</option>
-        <option value="bb">Big Bash</option>
-      </select>
-    </div>
-  </header>
+  <div class="team">India</div>
+  <div class="team">Australia</div>
+  <div class="team">England</div>
+  <div class="team">Pakistan</div>
+  <div class="team">South Africa</div>
+  <div class="team">New Zealand</div>
 
-  <main>
-    <section id="teamsGrid" class="grid" aria-live="polite">
-      <!-- Card template will be filled by JS -->
-    </section>
-  </main>
+  <p>Made by Rajratna</p>
 
-  <footer>
-    Made by you • Add or remove teams in the `teams` array in this file • Host with GitHub Pages
-  </footer>
-
-  <script>
-    // --- Data: edit this list to add/remove teams ---
-    const teams = [
-      { name: "India", country: "India", format: "international", founded: 1932, short:"IND" },
-      { name: "Australia", country: "Australia", format: "international", founded: 1877, short:"AUS" },
-      { name: "England", country: "England", format: "international", founded: 1877, short:"ENG" },
-      { name: "Pakistan", country: "Pakistan", format: "international", founded: 1952, short:"PAK" },
-      { name: "New Zealand", country: "New Zealand", format: "international", founded: 1920, short:"NZ" },
-      { name: "South Africa", country: "South Africa", format: "international", founded: 1889, short:"SA" },
-
-      { name: "Mumbai Indians", country: "India", format: "ipl", founded: 2008, short:"MI" },
-      { name: "Chennai Super Kings", country: "India", format: "ipl", founded: 2008, short:"CSK" },
-      { name: "Kolkata Knight Riders", country: "India", format: "ipl", founded: 2008, short:"KKR" },
-      { name: "Royal Challengers Bangalore", country: "India", format: "ipl", founded: 2008, short:"RCB" },
-
-      { name: "Sydney Sixers", country: "Australia", format: "bb", founded: 2011, short:"SS" },
-      { name: "Melbourne Stars", country: "Australia", format: "bb", founded: 2011, short:"MS" }
-    ];
-
-    // --- Render function ---
-    const container = document.getElementById('teamsGrid');
-    function render(list){
-      container.innerHTML = '';
-      if(!list.length){
-        container.innerHTML = '<div style="grid-column:1/-1;color:var(--muted);padding:18px;border-radius:10px;background:rgba(255,255,255,0.01)">No teams found.</div>';
-        return;
-      }
-      for(const t of list){
-        const card = document.createElement('article');
-        card.className = 'card';
-        card.innerHTML = `
-          <div class="flag" aria-hidden="true">${escapeHtml(t.short)}</div>
-          <div class="info">
-            <h3 class="team-name">${escapeHtml(t.name)}</h3>
-            <p class="meta">${escapeHtml(t.country)} • Founded: ${t.founded || '—'}</p>
-            <div class="tags">
-              <div class="tag">${formatLabel(t.format)}</div>
-              <div class="tag">Code: ${escapeHtml(t.short)}</div>
-            </div>
-          </div>
-        `;
-        container.appendChild(card);
-      }
-    }
-
-    function formatLabel(fmt){
-      if(fmt === 'ipl') return 'IPL';
-      if(fmt === 'bb') return 'Big Bash';
-      if(fmt === 'international') return 'International';
-      return fmt || 'Other';
-    }
-
-    // Simple search & filter
-    const input = document.getElementById('search');
-    const select = document.getElementById('filterFormat');
-
-    function filterAndRender(){
-      const q = input.value.trim().toLowerCase();
-      const f = select.value;
-      const filtered = teams.filter(t => {
-        if(f !== 'all' && t.format !== f) return false;
-        if(!q) return true;
-        return (t.name + ' ' + t.country + ' ' + (t.short||'')).toLowerCase().includes(q);
-      });
-      render(filtered);
-    }
-
-    input.addEventListener('input', filterAndRender);
-    select.addEventListener('change', filterAndRender);
-
-    // initial
-    render(teams);
-
-    // --- tiny helpers ---
-    function escapeHtml(str){
-      if(!str && str !== 0) return '';
-      return String(str).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-    }
-  </script>
 </body>
 </html>
